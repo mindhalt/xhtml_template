@@ -1,0 +1,17 @@
+﻿@charset "utf-8";
+
+/* + Global resets */
+/* - Global resets */
+
+
+/* + Common classes */
+
+.no-float {
+	zoom: 1;	
+}
+
+ul.tiles {
+	zoom: 1;	
+}
+
+/* - Common classes */

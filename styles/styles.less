@@ -1,0 +1,60 @@
+﻿/* Global Reset */
+
+@footer-height: 4em;
+
+#defaults {
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+* {outline: none; margin: 0;}
+
+html, body {height: 100%;}
+
+body {position: relative; padding: 0px; margin: 0px; font-size: 14px; font-family: Arial, sans-serif; line-height: 18px;}
+
+a img {border: 0px;}
+
+h1, h2, h3, h4, h5, h6 {margin: 0px 0px 10px 0px; padding: 0px; font-weight: normal;}
+
+input, select, textarea {font-size: inherit; font-family: inherit;}
+
+p {margin: 0px 0px 1em 0px; padding: 0px;}
+
+.noMargin {margin: 0px;}
+.noPadding {padding: 0px;}
+.plusOverflow {overflow: hidden;}
+.plusClear {clear: both;}
+
+div.hr {height: 1px; margin: 10px 0px 10px 0px; font-size: 1px; line-height: 1px;}
+
+input.text {}
+
+input.submit {}
+
+ul.mainMenu {
+    margin: 0px;
+    padding: 0px;
+    li {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+       }
+}
+
+ul li {list-style-type: none;}
+
+.wrapAll {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: -@footer-height; /* нижний margin является отрицательной величиной высоты wrapFooter */
+    #defaults;
+}
+
+.wrapFooter, .pushFooter {
+    height: @footer-height; /* .pushFooter должен быть той же высоты, что и .wrapFooter */
+    #defaults;
+}
