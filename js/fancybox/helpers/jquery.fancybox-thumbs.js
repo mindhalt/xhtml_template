@@ -1,21 +1,22 @@
  /*!
  * Thumbnail helper for fancyBox
- * version: 1.0.1
+ * version: 1.0.4
  * @requires fancyBox v2.0 or later
  *
- * Usage: 
+ * Usage:
  *     $(".fancybox").fancybox({
  *         thumbs: {
- *             width	: 50,
- *             height	: 50
+ *             width  : 50,
+ *             height : 50
  *         }
  *     });
- * 
+ *
  * Options:
  *     width - thumbnail width
  *     height - thumbnail height
  *     source - function to obtain the URL of the thumbnail image
- * 
+ *     position - 'top' or 'bottom'
+ *
  */
 (function ($) {
 	//Shortcut for fancyBox object
@@ -29,7 +30,13 @@
 
 		//Default function to obtain the URL of the thumbnail image
 		source: function (el) {
-			var img = $(el).find('img');
+			var img;
+
+			if ($.type(el) === 'string') {
+				return el;
+			}
+
+			img = $(el).find('img');
 
 			return img.length ? img.attr('src') : el.href;
 		},
@@ -45,10 +52,10 @@
 			list = '';
 
 			for (var n = 0; n < F.group.length; n++) {
-				list += '<li><a style="width:' + thumbWidth + 'px;height:' + thumbHeight + 'px;" href="javascript:$.fancybox.jumpto(' + n + ');"></a></li>';
+				list += '<li><a style="width:' + thumbWidth + 'px;height:' + thumbHeight + 'px;" href="javascript:jQuery.fancybox.jumpto(' + n + ');"></a></li>';
 			}
 
-			this.wrap = $('<div id="fancybox-thumbs"></div>').appendTo('body');
+			this.wrap = $('<div id="fancybox-thumbs"></div>').addClass(opts.position || 'bottom').appendTo('body');
 			this.list = $('<ul>' + list + '</ul>').appendTo(this.wrap);
 
 			//Load each thumbnail
@@ -89,11 +96,11 @@
 
 					$(this).hide().appendTo(parent).fadeIn(300);
 
-				}).attr('src', thumbSource(this));
+				}).attr('src', thumbSource( F.group[ i ] ));
 			});
 
 			//Set initial width
-			this.width = this.list.children().eq(0).outerWidth();
+			this.width = this.list.children().eq(0).outerWidth(true);
 
 			this.list.width(this.width * (F.group.length + 1)).css('left', Math.floor($(window).width() * 0.5 - (F.current.index * this.width + this.width * 0.5)));
 		},
@@ -108,7 +115,7 @@
 		},
 
 		beforeLoad: function (opts) {
-			//Remove self if gallery do not have at least two items 
+			//Remove self if gallery do not have at least two items
 			if (F.group.length < 2) {
 				F.coming.helpers.thumbs = false;
 
@@ -116,7 +123,7 @@
 			}
 
 			//Increase bottom margin to give space for thumbs
-			F.coming.margin[2] = opts.height + 30;
+			F.coming.margin[ opts.position === 'top' ? 0 : 2 ] = opts.height + 30;
 		},
 
 		afterShow: function (opts) {
