@@ -1,0 +1,71 @@
+﻿#defaults {
+  width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.round (@angle){
+  -webkit-border-radius: @angle;
+  -khtml-border-radius: @angle;
+  -moz-border-radius: @angle;
+  -ms-border-radius: @angle;
+  -o-border-radius: @angle;
+  border-radius: @angle;
+}
+
+.shadow (@shadow){
+  -webkit-box-shadow: @shadow;
+  -khtml-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  -o-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+@font-arial: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
+@footer-height: 4em;
+
+* {outline: none; margin: 0;}
+
+html, body {height: 100%;}
+
+body {position: relative; padding: 0; margin: 0; font-family: @font-arial; font-size: 14px; line-height: 18px; color: #000; background: #fff;}
+
+a img {border: 0px;}
+
+h1, h2, h3, h4, h5, h6 {margin: 0 0 1em 0; padding: 0; line-height: 1.123; font-weight: normal;}
+
+input, select, textarea {font-size: inherit; font-family: inherit;}
+
+p {margin: 0px 0px 1em 0px; padding: 0;}
+
+.no-margin {margin: 0;}
+.no-padding {padding: 0;}
+.overflow {overflow: hidden;}
+.clear {clear: both;}
+.float-left {float: left;}
+.float-right {float: right;}
+.position-absolute {position: absolute;}
+.position-relative {position: relative;}
+
+div.hr {height: 1px; margin: 10px 0px 10px 0px; font-size: 1px; line-height: 1px;}
+
+input.text {}
+
+input.submit {}
+
+ul li {list-style-type: none; margin: 0; padding: 0;}
+
+.wrap-all {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: -@footer-height; /* нижний margin является отрицательной величиной высоты wrapFooter */
+  #defaults;
+}
+
+.wrap-footer, .push-footer {
+  height: @footer-height; /* .pushFooter должен быть той же высоты, что и .wrapFooter */
+  #defaults;
+}

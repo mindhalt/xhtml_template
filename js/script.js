@@ -7,3 +7,13 @@ window.log = function(){
 };
 
 // end for logger
+
+$(document).ready(function(){
+  $('title').load('title');
+
+  // $('.slick').slick({
+  //   // setting-name: setting-value
+  // });
+
+  // $('a.photos').fancybox({ helpers : {overlay : {locked : false}} });
+});
