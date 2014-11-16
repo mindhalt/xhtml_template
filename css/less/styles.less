@@ -22,6 +22,15 @@
   box-shadow: @shadow;
 }
 
+.box-sizing (@sizing){
+  -webkit-box-sizing: @sizing;
+  -khtml-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -ms-box-sizing: @sizing;
+  -o-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
 @font-arial: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
 @footer-height: 4em;
 
@@ -68,4 +77,11 @@ ul li {list-style-type: none; margin: 0; padding: 0;}
 .wrap-footer, .push-footer {
   height: @footer-height; /* .pushFooter должен быть той же высоты, что и .wrapFooter */
   #defaults;
+}
+
+button, a.button {
+  .box-sizing(border-box);
+  display: inline-block; position: relative;
+  border: none; border-collapse: collapse;
+  &::-moz-focus-inner {border: none;}
 }

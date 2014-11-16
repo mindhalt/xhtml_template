@@ -99,3 +99,20 @@ ul li {
   margin-left: auto;
   margin-right: auto;
 }
+button,
+a.button {
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  border: none;
+  border-collapse: collapse;
+}
+button::-moz-focus-inner,
+a.button::-moz-focus-inner {
+  border: none;
+}
