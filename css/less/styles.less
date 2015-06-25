@@ -1,70 +1,77 @@
-﻿#defaults {
+﻿@import "normalize.css";
+@import "../js/fancybox/jquery.fancybox.css";
+@import "slick.css";
+@import "slick-theme.css";
+@import "vars.less";
+
+#defaults {
   width: 990px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.round (@angle){
-  -webkit-border-radius: @angle;
-  -khtml-border-radius: @angle;
-  -moz-border-radius: @angle;
-  -ms-border-radius: @angle;
-  -o-border-radius: @angle;
-  border-radius: @angle;
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
-.shadow (@shadow){
-  -webkit-box-shadow: @shadow;
-  -khtml-box-shadow: @shadow;
-  -moz-box-shadow: @shadow;
-  -ms-box-shadow: @shadow;
-  -o-box-shadow: @shadow;
-  box-shadow: @shadow;
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+ ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
-.box-sizing (@sizing){
-  -webkit-box-sizing: @sizing;
-  -khtml-box-sizing: @sizing;
-  -moz-box-sizing: @sizing;
-  -ms-box-sizing: @sizing;
-  -o-box-sizing: @sizing;
-  box-sizing: @sizing;
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
-@font-arial: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
-@footer-height: 4em;
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
 
-* {outline: none; margin: 0;}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
 
-html, body {height: 100%;}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 
-body {position: relative; padding: 0; margin: 0; font-family: @font-arial; font-size: 14px; line-height: 18px; color: #000; background: #fff;}
+textarea {
+  resize: vertical;
+}
 
-a img {border: 0px;}
+// Browser Upgrade Prompt
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
 
-h1, h2, h3, h4, h5, h6 {margin: 0 0 1em 0; padding: 0; line-height: 1.123; font-weight: normal;}
 
-input, select, textarea {font-size: inherit; font-family: inherit;}
-
-p {margin: 0px 0px 1em 0px; padding: 0;}
-
-.no-margin {margin: 0;}
-.no-padding {padding: 0;}
-.overflow {overflow: hidden;}
-.clear {clear: both;}
-.float-left {float: left;}
-.float-right {float: right;}
-.position-absolute {position: absolute;}
-.position-relative {position: relative;}
-
-div.hr {height: 1px; margin: 10px 0px 10px 0px; font-size: 1px; line-height: 1px;}
-
-input.text {}
-
-input.submit {}
-
-ul li {list-style-type: none; margin: 0; padding: 0;}
-
+// Main styles
 .wrap-all {
   min-height: 100%;
   height: auto !important;
@@ -85,3 +92,6 @@ button, a.button {
   border: none; border-collapse: collapse;
   &::-moz-focus-inner {border: none;}
 }
+
+// Other includes
+@import "helpers.css";

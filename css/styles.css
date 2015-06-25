@@ -1,84 +1,62 @@
+@import "normalize.css";
+@import "../js/fancybox/jquery.fancybox.css";
+@import "slick.css";
+@import "slick-theme.css";
+@import "helpers.css";
 #defaults {
   width: 990px;
   margin-left: auto;
   margin-right: auto;
 }
-* {
-  outline: none;
-  margin: 0;
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
 }
-html,
-body {
-  height: 100%;
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
-body {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  font-family: Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  color: #000;
-  background: #fff;
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
-a img {
-  border: 0px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 1em 0;
-  padding: 0;
-  line-height: 1.123;
-  font-weight: normal;
-}
-input,
-select,
-textarea {
-  font-size: inherit;
-  font-family: inherit;
-}
-p {
-  margin: 0px 0px 1em 0px;
-  padding: 0;
-}
-.no-margin {
-  margin: 0;
-}
-.no-padding {
-  padding: 0;
-}
-.overflow {
-  overflow: hidden;
-}
-.clear {
-  clear: both;
-}
-.float-left {
-  float: left;
-}
-.float-right {
-  float: right;
-}
-.position-absolute {
-  position: absolute;
-}
-.position-relative {
-  position: relative;
-}
-div.hr {
+hr {
+  display: block;
   height: 1px;
-  margin: 10px 0px 10px 0px;
-  font-size: 1px;
-  line-height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
-ul li {
-  list-style-type: none;
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+fieldset {
+  border: 0;
   margin: 0;
   padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 .wrap-all {
   min-height: 100%;

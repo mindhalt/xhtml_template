@@ -8,9 +8,7 @@ window.log = function(){
 
 // end for logger
 
-$(document).ready(function(){
-  $('title').load('title');
-
+jQuery(document).ready(function( $ ) {
   // $('.slick').slick({
   //   // setting-name: setting-value
   // });
