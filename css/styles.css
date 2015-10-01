@@ -1,8 +1,16 @@
 @import "normalize.css";
 @import "../js/fancybox/jquery.fancybox.css";
-@import "slick.css";
-@import "slick-theme.css";
+@import "../js/slick/slick.css";
+@import "../js/slick/slick-theme.css";
 @import "helpers.css";
+#mdi {
+  font: normal normal normal 24px/1 MaterialDesignIcons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
 #defaults {
   width: 990px;
   margin-left: auto;
@@ -13,13 +21,6 @@ html {
   font-size: 1em;
   line-height: 1.4;
 }
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -27,6 +28,13 @@ html {
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
+}
+:root {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
 }
 hr {
   display: block;
@@ -51,6 +59,18 @@ fieldset {
 }
 textarea {
   resize: vertical;
+}
+a.more::after {
+  font: normal normal normal 24px/1 MaterialDesignIcons;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  content: '  \f142';
+  display: inline;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 .browserupgrade {
   margin: 0.2em 0;

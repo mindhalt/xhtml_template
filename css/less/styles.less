@@ -1,7 +1,7 @@
 ﻿@import "normalize.css";
 @import "../js/fancybox/jquery.fancybox.css";
-@import "slick.css";
-@import "slick-theme.css";
+@import "../js/slick/slick.css";
+@import "../js/slick/slick-theme.css";
 @import "vars.less";
 
 #defaults {
@@ -16,15 +16,13 @@ html {
   line-height: 1.4;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
 
- ::-moz-selection {
+// Remove text-shadow in selection highlight:
+// https://twitter.com/miketaylr/status/12228805301
+// These selection rule sets have to be separate.
+// Customize the background color to match your design.
+
+::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
@@ -32,6 +30,14 @@ html {
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
+}
+
+:root {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 hr {
@@ -43,12 +49,7 @@ hr {
   padding: 0;
 }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+audio, canvas, iframe, img, svg, video {
   vertical-align: middle;
 }
 
@@ -62,7 +63,16 @@ textarea {
   resize: vertical;
 }
 
-// Browser Upgrade Prompt
+a.more::after {
+  #mdi;
+  content: '  \f142';
+  display: inline;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+// browser upgrade prompt
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -71,7 +81,7 @@ textarea {
 }
 
 
-// Main styles
+// main styles
 .wrap-all {
   min-height: 100%;
   height: auto !important;
@@ -93,5 +103,5 @@ button, a.button {
   &::-moz-focus-inner {border: none;}
 }
 
-// Other includes
+// other includes
 @import "helpers.css";

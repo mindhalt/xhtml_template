@@ -1,0 +1,24 @@
+{
+  "name": "ukr-agro-product",
+  "version": "0.1.0",
+  "description": "ukr-agro-product project",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rigger": "^0.5.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://rmigdalyonok@git.ddm-studio.com:8080/scm/git/direct/ukragro"
+  },
+  "author": "Migdalyonok R.",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.8.0",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rigger": "^0.5.8",
+    "gulp-watch": "^4.3.4"
+  }
+}

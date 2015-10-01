@@ -25,5 +25,27 @@
   box-sizing: @sizing;
 }
 
+.background-size (@size){
+  -webkit-background-size: @size;
+  background-size: @size;
+}
+
+.opacity(@opacity){
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opacity})";
+  filter: alpha(opacity=@opacity);
+  -moz-opacity: @opacity / 100;
+  -khtml-opacity: @opacity / 100;
+  opacity: @opacity / 100;
+}
+
+#mdi {
+  font: normal normal normal 24px/1 MaterialDesignIcons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
 @font-arial: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
 @footer-height: 4em;
